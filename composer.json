@@ -5,9 +5,9 @@
     "type": "magento2-module",
     "require": {
         "magento/framework": "*",
-        "magento/module-payment": "100.1.*",
-        "magento/module-checkout": "100.1.*",
-        "magento/module-sales": "100.1.*"
+        "magento/module-payment": "*",
+        "magento/module-checkout": "*",
+        "magento/module-sales": "*"
     },
     "license": [
         "proprietary"
