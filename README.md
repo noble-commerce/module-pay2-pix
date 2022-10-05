@@ -1,6 +1,6 @@
 # Pay2 - Pix Gateway for Magento 2
 
-Oficial Pay2 Pix Payment Gateway for Magento 2 platform by [NobleCommerce.io](https://noblecommerce.io).
+Pay2 Pix payment gateway for Magento 2 platform by [NobleCommerce.io](https://noblecommerce.io).
 
 ## Installation
 
@@ -22,5 +22,7 @@ Done!
 
 ## Configuration
 
-To configure the payment gateway module, access the store admin and go to "Stores" > "Configuration" > "Sales" > "Payment Methods". Open the "Pay2 Pix Gateway" section and fill data as required.  
+To configure the payment gateway module, access the store admin and go to "Stores" > "Configuration" > "Sales" > "Payment Methods". Open the "Pay2 Pix Gateway" section and fill in data as required.  
 
+- This module requires that customer tax vat or address vat ID field are enabled to customers fill the CPF/CNPJ value.
+- You also must configure the address lines to 4 - the last line must be the complement field.
