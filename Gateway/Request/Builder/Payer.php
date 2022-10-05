@@ -50,6 +50,11 @@ class Payer implements BuilderInterface
         $street = $address->getStreet();
         $postCode = str_replace('-', '', $address->getPostcode());
 
+        if( !$taxId && $address->getVatId() ){
+            $taxId = $address->getVatId();
+            $taxId = str_replace(array('.', '/', '-'), '', $taxId);
+        }
+
         $data = [
             'payer' => [
                 'name' => $name,
