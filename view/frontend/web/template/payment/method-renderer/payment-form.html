@@ -49,7 +49,7 @@
             <form class="form" action="#" method="post"
                   data-bind="{attr: {id: getCode() + '-payment-form'}}">
                 <!-- ko if: getInstructions() -->
-                <div data-bind="html: getInstructions()"></div>
+                <div class="payment-form-instructions" data-bind="html: getInstructions()"></div>
                 <!-- /ko -->
             </form>
         </div>
