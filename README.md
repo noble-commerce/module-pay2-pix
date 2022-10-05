@@ -7,7 +7,7 @@ Oficial Pay2 Pix Payment Gateway for Magento 2 platform by [NobleCommerce.io](ht
 1 - Install the module:
 
 ```bash
-composer require pay2-bank/pay2-magento2
+composer require noble-commerce/module-pay2-pix
 ```
 
 2 - Enable the module and clear cache:
