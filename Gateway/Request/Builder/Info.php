@@ -37,9 +37,13 @@ class Info implements BuilderInterface
         /** @var Payment $payment */
         $payment = $paymentDataObject->getPayment();
         $transactionId = $payment->getLastTransId();
+        $status = $payment->getAdditionalInformation('status');
 
         if (!$transactionId) {
             throw new LocalizedException(__('Transaction not found to retrieve information.'));
+        }
+        if ($status === 'VOIDED') {
+            throw new LocalizedException(__('Transaction was voided.'));
         }
 
         return [
