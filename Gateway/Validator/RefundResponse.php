@@ -39,6 +39,10 @@ class RefundResponse extends AbstractValidator
             $isValid = false;
         }
 
+        if (!$isValid && isset($response['message'])) {
+            $errorMessages[] = $response['message'];
+        }
+
         return $this->createResult($isValid, $errorMessages);
     }
 }
