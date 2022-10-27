@@ -215,6 +215,7 @@ class UpdateOrderStatus
 
             $payment = $order->getPayment();
             $payment->setAdditionalInformation('qr_code_image', '');
+            $payment->setAdditionalInformation('status', 'EXPIRED');
             $this->paymentRepository->save($payment);
 
             $this->orderManagement->cancel($order->getEntityId());
