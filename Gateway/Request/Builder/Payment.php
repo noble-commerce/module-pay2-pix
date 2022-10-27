@@ -64,11 +64,12 @@ class Payment implements BuilderInterface
 
         $storeId = $order->getStoreId();
         $store = $this->storeManager->getStore($storeId);
+        $expirationInSeconds = $this->config->getExpireTime() * 60;
 
         $data = [
             'payment' => [
                 'total_amount' => $this->getTransactionValue($buildSubject),
-                'expiration' => $this->config->getExpireTime(),
+                'expiration' => $expirationInSeconds,
                 'account_id' => $this->config->getAccountId(),
                 'external_identifier' => $order->getIncrementId(),
                 'store_name' => $store->getName(),
