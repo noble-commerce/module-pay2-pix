@@ -42,6 +42,8 @@ $qrCodeText = $block->getInfo()->getAdditionalInformation('text_content');
         <td>
             <?php if ($block->isPaymentPaid()) : ?>
                 <?= /* @noEscape */ __('Paid') ?>
+            <?php elseif ($block->isPaymentVoided()) : ?>
+                <?= /* @noEscape */ __('Voided') ?>
             <?php elseif ($block->isPaymentRefunded()) : ?>
                 <?= /* @noEscape */ __('Refunded') ?>
             <?php elseif ($block->isPaymentExpired()) : ?>

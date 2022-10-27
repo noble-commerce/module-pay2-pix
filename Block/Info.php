@@ -69,6 +69,16 @@ class Info extends ConfigurableInfo
     }
 
     /**
+     * Check if payment was voided
+     * @return boolean
+     */
+    public function isPaymentVoided()
+    {
+        $status = $this->getInfo()->getAdditionalInformation('status');
+        return $status === 'VOIDED';
+    }
+
+    /**
      * Check if payment is pending
      * @return boolean
      */

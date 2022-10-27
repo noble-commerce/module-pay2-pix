@@ -32,6 +32,8 @@ $isOrderPage = $block->getRequest()->getActionName() === 'view';
             <b><?= /* @noEscape */ __('Status') ?>:</b>
             <?php if ($block->isPaymentPaid()) : ?>
                 <?= /* @noEscape */ __('Paid') ?>
+            <?php elseif ($block->isPaymentVoided()) : ?>
+                <?= /* @noEscape */ __('Voided') ?>
             <?php elseif ($block->isPaymentRefunded()) : ?>
                 <?= /* @noEscape */ __('Refunded') ?>
             <?php elseif ($block->isPaymentExpired()) : ?>
