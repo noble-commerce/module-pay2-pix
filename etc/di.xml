@@ -46,8 +46,8 @@
             <argument name="commands" xsi:type="array">
                 <item name="authorize" xsi:type="string">Pay2\Pix\Virtual\Gateway\Command\AuthorizeCommand</item>
                 <item name="notification" xsi:type="string">Pay2\Pix\Virtual\Gateway\Command\NotificationCommand</item>
+                <item name="void" xsi:type="string">Pay2\Pix\Gateway\Command\VoidCommand</item>
                 <item name="refund" xsi:type="string">Pay2\Pix\Virtual\Gateway\Command\RefundCommand</item>
-                <item name="void" xsi:type="string">Pay2\Pix\Virtual\Gateway\Command\RefundCommand</item>
                 <item name="cancel" xsi:type="string">Pay2\Pix\Virtual\Gateway\Command\RefundCommand</item>
             </argument>
         </arguments>
