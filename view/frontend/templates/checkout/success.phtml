@@ -36,7 +36,6 @@ $qrCodeText = $block->getPayment()->getAdditionalInformation('text_content');
                 <p><b><?= /* @noEscape */ __('QR Code') ?></b></p>
                 <p class="pix-qr-code-image">
                     <img src="<?=  /* @noEscape */ $qrCodeImage ?>" alt="<?= /* @noEscape */ __('QR Code') ?>" />
-                    <span><?= /* @noEscape */ __('Pix code copied!') ?></span>
                 </p>
             </div>
         <?php endif; ?>
@@ -44,7 +43,12 @@ $qrCodeText = $block->getPayment()->getAdditionalInformation('text_content');
         <div class="pix-column pix-column-text">
             <p><b><?= /* @noEscape */ __('Pix Copy and Paste') ?></b></p>
             <p class="pix-qr-code-text">
-                <?= /* @noEscape */ $qrCodeText ?>
+                <span class="pix-qr-code-text-code">
+                    <?= /* @noEscape */ $qrCodeText ?>
+                </span>
+                <span class="pix-qr-code-text-message">
+                    <?= /* @noEscape */ __('Pix code copied!') ?>
+                </span>
             </p>
             <p class="pix-copy-paste">
                 <button class="action primary pix-button-copy" data-clipboard-text="<?= /* @noEscape */ $qrCodeText; ?>">
@@ -68,9 +72,9 @@ require([
         var text = this.dataset.clipboardText;
         navigator.clipboard.writeText(text).then(function(){
 
-            $('.pix-qr-code-image').addClass('copied');
+            $('.pix-qr-code-text').addClass('copied');
             window.setTimeout(function(){
-                $('.pix-qr-code-image').removeClass('copied');
+                $('.pix-qr-code-text').removeClass('copied');
             }, 5000);
 
         }, function(err) {
