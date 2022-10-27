@@ -31,7 +31,6 @@
             <argument name="handlers" xsi:type="array">
                 <item name="default" xsi:type="string">Pay2\Pix\Virtual\Gateway\Config\ConfigValueHandler</item>
                 <item name="can_void" xsi:type="string">Pay2\Pix\Gateway\Config\Handler\CanVoid</item>
-                <item name="can_cancel" xsi:type="string">Pay2\Pix\Gateway\Config\Handler\CanVoid</item>
             </argument>
         </arguments>
     </virtualType>
