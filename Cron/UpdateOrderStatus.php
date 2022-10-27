@@ -172,7 +172,7 @@ class UpdateOrderStatus
 
         // Only expire pending transaction status
         if ($transactionStatus !== 'CREATED') {
-            return;
+            return false;
         }
 
         // Add 1 minute as additional delay callback to determine expire time
