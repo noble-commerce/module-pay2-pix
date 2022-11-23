@@ -63,8 +63,8 @@ class Payer implements BuilderInterface
                 'address' => [
                     'street' => $street[0],
                     'number' => $street[1],
-                    'complement' => $street[3],
-                    'neighborhood' => $street[2],
+                    'complement' => isset($street[3]) ? $street[3] : '',
+                    'neighborhood' => isset($street[2]) ? $street[2] : '',
                     'city' => $address->getCity(),
                     'state' => $address->getRegionCode(),
                     'postal_code' => $postCode
