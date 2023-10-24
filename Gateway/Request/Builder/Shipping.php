@@ -42,7 +42,9 @@ class Shipping implements BuilderInterface
 
         $address = $order->getShippingAddress() ? $order->getShippingAddress() : $order->getBillingAddress();
         $street = $address->getStreet();
-        $postCode = str_replace('-', '', $address->getPostcode());
+
+        $postCode = (string) $address->getPostcode();
+        $postCode = str_replace('-', '', $postCode);
 
         $data = [
             'shipping' => [

@@ -43,15 +43,17 @@ class Payer implements BuilderInterface
         ]);
         $name = str_replace('  ', ' ', $name);
 
-        $taxId = $order->getCustomerTaxvat();
+        $taxId = (string) $order->getCustomerTaxvat();
         $taxId = str_replace(array('.', '/', '-'), '', $taxId);
 
         $address = $order->getBillingAddress();
         $street = $address->getStreet();
-        $postCode = str_replace('-', '', $address->getPostcode());
+
+        $postCode = (string) $address->getPostcode();
+        $postCode = str_replace('-', '', $postCode);
 
         if( !$taxId && $address->getVatId() ){
-            $taxId = $address->getVatId();
+            $taxId = (string) $address->getVatId();
             $taxId = str_replace(array('.', '/', '-'), '', $taxId);
         }
 
