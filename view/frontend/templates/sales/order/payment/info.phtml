@@ -30,20 +30,20 @@ $isOrderPage = $block->getRequest()->getActionName() === 'view';
     <dd class="content">
         <p>
             <b><?= /* @noEscape */ __('Status') ?>:</b>
-            <?php if ($block->isPaymentPaid()) : ?>
+            <?php if ($block->isPaymentPaid()): ?>
                 <?= /* @noEscape */ __('Paid') ?>
-            <?php elseif ($block->isPaymentVoided()) : ?>
+            <?php elseif ($block->isPaymentVoided()): ?>
                 <?= /* @noEscape */ __('Voided') ?>
-            <?php elseif ($block->isPaymentRefunded()) : ?>
+            <?php elseif ($block->isPaymentRefunded()): ?>
                 <?= /* @noEscape */ __('Refunded') ?>
-            <?php elseif ($block->isPaymentExpired()) : ?>
+            <?php elseif ($block->isPaymentExpired()): ?>
                 <?= /* @noEscape */ __('Expired') ?>
-            <?php else : ?>
+            <?php else: ?>
                 <?= /* @noEscape */ __('Waiting') ?>
             <?php endif ?>
         </p>
-        <?php if ($block->isPaymentPending()) : ?>
-            <?php if (!empty($qrCodeImage)) : ?>
+        <?php if ($block->isPaymentPending()): ?>
+            <?php if (!empty($qrCodeImage)): ?>
             <p>
                 <b><?= /* @noEscape */ __('QR Code') ?>:</b><br/>
                 <img style="border: 1px solid #000; margin: 10px 0; max-width: 240px; max-height: 240px;" src="<?= /* @noEscape */ $qrCodeImage ?>" alt="<?= /* @noEscape */ __('QR Code') ?>" />
@@ -55,7 +55,7 @@ $isOrderPage = $block->getRequest()->getActionName() === 'view';
                     <?= /* @noEscape */ trim($qrCodeText) ?>
                 </span>
 
-                <?php if( $isOrderPage ): ?>
+                <?php if ($isOrderPage): ?>
                     <button class="pix-button-copy" data-clipboard-text="<?= /* @noEscape */ trim($qrCodeText) ?>">
                         <?= /* @noEscape */ __('Copy Pix') ?>
                     </button>
@@ -88,6 +88,6 @@ require([
 script;
 ?>
 
-<?php if( $isOrderPage ): ?>
+<?php if ($isOrderPage): ?>
     <?= /* @noEscape */ $secureRenderer->renderTag('script', [], $scriptString, false) ?>
 <?php endif ?>

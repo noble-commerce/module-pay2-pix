@@ -22,7 +22,6 @@ class SkipCsrfValidator
 
     /**
      * @param \Magento\Framework\App\Request\CsrfValidator $subject
-     * @param \Closure $proceed
      * @param \Magento\Framework\App\Request\Http $request
      * @param \Magento\Framework\App\ActionInterface $action
      */

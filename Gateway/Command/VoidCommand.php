@@ -30,9 +30,6 @@ class VoidCommand implements CommandInterface
      */
     protected $paymentRepository;
 
-    /**
-     * @param \Magento\Sales\Api\OrderPaymentRepositoryInterface $paymentRepository
-     */
     public function __construct(
         OrderPaymentRepositoryInterface $paymentRepository
     ) {

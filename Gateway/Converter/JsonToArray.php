@@ -17,8 +17,8 @@ declare(strict_types=1);
 
 namespace Pay2\Pix\Gateway\Converter;
 
-use Magento\Payment\Gateway\Http\ConverterInterface;
 use Magento\Framework\Serialize\Serializer\Json;
+use Magento\Payment\Gateway\Http\ConverterInterface;
 
 class JsonToArray implements ConverterInterface
 {
@@ -27,9 +27,6 @@ class JsonToArray implements ConverterInterface
      */
     protected $serializer;
 
-    /**
-     * @param \Magento\Framework\Serialize\Serializer\Json $serializer
-     */
     public function __construct(Json $serializer)
     {
         $this->serializer = $serializer;

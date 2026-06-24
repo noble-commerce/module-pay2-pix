@@ -31,7 +31,7 @@ $qrCodeText = $block->getPayment()->getAdditionalInformation('text_content');
     </div>
 
     <div class="pix-columns">
-        <?php if (!empty($qrCodeImage)) : ?>
+        <?php if (!empty($qrCodeImage)): ?>
             <div class="pix-column pix-column-image">
                 <p><b><?= /* @noEscape */ __('QR Code') ?></b></p>
                 <p class="pix-qr-code-image">

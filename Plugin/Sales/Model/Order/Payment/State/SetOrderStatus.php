@@ -20,7 +20,6 @@ namespace Pay2\Pix\Plugin\Sales\Model\Order\Payment\State;
 use Magento\Sales\Api\Data\OrderInterface;
 use Magento\Sales\Api\Data\OrderPaymentInterface;
 use Magento\Sales\Model\Order;
-use Magento\Sales\Model\OrderPayment;
 use Magento\Sales\Model\Order\Payment\State\CommandInterface;
 use Pay2\Pix\Model\Checkout\ConfigProvider;
 
@@ -30,9 +29,6 @@ class SetOrderStatus
     /**
      * Set pending order status on order place process
      * This is necessary because Magento force the processing status on new orders with authorization
-     * @param CommandInterface $subject
-     * @param \Closure $proceed
-     * @param OrderPayment $payment
      * @param string|float|int $amount
      * @param Order $order
      * @return string

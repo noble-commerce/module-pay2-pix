@@ -34,10 +34,6 @@ class Info implements TransferFactoryInterface
      */
     protected $config;
 
-    /**
-     * @param TransferBuilder $transferBuilder
-     * @param Config $config
-     */
     public function __construct(
         TransferBuilder $transferBuilder,
         Config $config

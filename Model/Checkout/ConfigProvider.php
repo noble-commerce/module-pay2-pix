@@ -26,16 +26,13 @@ class ConfigProvider implements ConfigProviderInterface
     /**
      * Payment code
      */
-    const CODE = 'pay2_pix';
+    public const CODE = 'pay2_pix';
 
     /**
      * @var Config
      */
     protected $config;
 
-    /**
-     * @param \Pay2\Pix\Gateway\Config\Config $config
-     */
     public function __construct(Config $config)
     {
         $this->config = $config;

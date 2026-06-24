@@ -32,8 +32,7 @@ class InfoResponse extends AbstractValidator
         $isValid = true;
         $errorMessages = [];
 
-        if (
-            !$response
+        if (!$response
             || !isset($response['data']['status'])
         ) {
             $isValid = false;

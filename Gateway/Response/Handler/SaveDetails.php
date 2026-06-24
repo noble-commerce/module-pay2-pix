@@ -36,7 +36,7 @@ class SaveDetails implements HandlerInterface
         $payment = $paymentDataObject->getPayment();
 
         $data = $response['data']['raw_data']['data'];
-        $status = strtoupper($data['financialStatement']['status']);
+        $status = strtoupper((string) $data['financialStatement']['status']);
 
         // Status
         $payment->setAdditionalInformation('status', $status);

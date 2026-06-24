@@ -17,14 +17,14 @@ declare(strict_types=1);
 
 namespace Pay2\Pix\Model\Config\Source;
 
-use Magento\Framework\Data\OptionSourceInterface;
 use Magento\Eav\Model\Entity\Attribute\Source\AbstractSource;
+use Magento\Framework\Data\OptionSourceInterface;
 
 class Environment extends AbstractSource implements OptionSourceInterface
 {
 
-    const PRODUCTION = 'production';
-    const SANDBOX = 'sandbox';
+    public const PRODUCTION = 'production';
+    public const SANDBOX = 'sandbox';
 
     /**
      * @inheritDoc

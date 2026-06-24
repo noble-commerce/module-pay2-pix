@@ -20,9 +20,9 @@ namespace Pay2\Pix\Cron;
 use Magento\Framework\DB\Adapter\AdapterInterface;
 use Magento\Framework\DB\Select;
 use Magento\Payment\Gateway\Command\CommandManagerPoolInterface;
+use Magento\Sales\Api\OrderManagementInterface;
 use Magento\Sales\Api\OrderPaymentRepositoryInterface;
 use Magento\Sales\Api\OrderRepositoryInterface;
-use Magento\Sales\Api\OrderManagementInterface;
 use Magento\Sales\Model\Order;
 use Magento\Sales\Model\ResourceModel\Order as OrderResource;
 use Pay2\Pix\Gateway\Config\Config;
@@ -67,15 +67,6 @@ class UpdateOrderStatus
      */
     protected $logger;
 
-    /**
-     * @param \Pay2\Pix\Gateway\Config\Config $config
-     * @param \Magento\Sales\Api\OrderPaymentRepositoryInterface $paymentRepository
-     * @param \Magento\Sales\Model\ResourceModel\Order $orderResource
-     * @param \Magento\Sales\Api\OrderRepositoryInterface $orderRepository
-     * @param \Magento\Sales\Api\OrderManagementInterface $orderManagement
-     * @param \Magento\Payment\Gateway\Command\CommandManagerPoolInterface $commandManagerPool
-     * @param \Psr\Log\LoggerInterface $logger
-     */
     public function __construct(
         Config $config,
         OrderPaymentRepositoryInterface $paymentRepository,

@@ -37,10 +37,6 @@ class Items implements BuilderInterface
      */
     protected $imageHelper;
 
-    /**
-     * @param \Magento\Catalog\Model\ProductRepository $productRepository
-     * @param \Magento\Catalog\Helper\Image $imageHelper
-     */
     public function __construct(
         ProductRepository $productRepository,
         Image $imageHelper

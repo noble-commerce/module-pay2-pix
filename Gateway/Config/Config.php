@@ -17,25 +17,25 @@ declare(strict_types=1);
 
 namespace Pay2\Pix\Gateway\Config;
 
-use Pay2\Pix\Model\Config\Source\Environment;
 use Magento\Payment\Gateway\Config\Config as PaymentConfig;
+use Pay2\Pix\Model\Config\Source\Environment;
 
 class Config extends PaymentConfig
 {
 
-    const ACTIVE = 'active';
-    const TITLE = 'title';
-    const ENVIRONMENT = 'environment';
-    const ACCOUNT_ID = 'account_id';
-    const PIX_KEY = 'pix_key';
-    const ACCESS_TOKEN = 'access_token';
-    const EXPIRE_TIME = 'expire_time';
-    const INSTRUCTIONS = 'instructions';
-    const ERROR_MESSAGE = 'error_message';
-    const DEBUG = 'debug';
+    public const ACTIVE = 'active';
+    public const TITLE = 'title';
+    public const ENVIRONMENT = 'environment';
+    public const ACCOUNT_ID = 'account_id';
+    public const PIX_KEY = 'pix_key';
+    public const ACCESS_TOKEN = 'access_token';
+    public const EXPIRE_TIME = 'expire_time';
+    public const INSTRUCTIONS = 'instructions';
+    public const ERROR_MESSAGE = 'error_message';
+    public const DEBUG = 'debug';
 
-    const PRODUCTION_URL = 'https://api.pay2.com.br/api';
-    const SANDBOX_URL = 'https://sandbox.pay2.com.br/api';
+    public const PRODUCTION_URL = 'https://api.pay2.com.br/api';
+    public const SANDBOX_URL = 'https://sandbox.pay2.com.br/api';
 
     /**
      * @return bool

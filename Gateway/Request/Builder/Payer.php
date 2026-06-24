@@ -44,7 +44,7 @@ class Payer implements BuilderInterface
         $name = str_replace('  ', ' ', $name);
 
         $taxId = (string) $order->getCustomerTaxvat();
-        $taxId = str_replace(array('.', '/', '-'), '', $taxId);
+        $taxId = str_replace(['.', '/', '-'], '', $taxId);
 
         $address = $order->getBillingAddress();
         $street = $address->getStreet();
@@ -52,9 +52,9 @@ class Payer implements BuilderInterface
         $postCode = (string) $address->getPostcode();
         $postCode = str_replace('-', '', $postCode);
 
-        if( !$taxId && $address->getVatId() ){
+        if (!$taxId && $address->getVatId()) {
             $taxId = (string) $address->getVatId();
-            $taxId = str_replace(array('.', '/', '-'), '', $taxId);
+            $taxId = str_replace(['.', '/', '-'], '', $taxId);
         }
 
         $data = [
@@ -65,8 +65,8 @@ class Payer implements BuilderInterface
                 'address' => [
                     'street' => $street[0],
                     'number' => $street[1],
-                    'complement' => isset($street[3]) ? $street[3] : '',
-                    'neighborhood' => isset($street[2]) ? $street[2] : '',
+                    'complement' => $street[3] ?? '',
+                    'neighborhood' => $street[2] ?? '',
                     'city' => $address->getCity(),
                     'state' => $address->getRegionCode(),
                     'postal_code' => $postCode

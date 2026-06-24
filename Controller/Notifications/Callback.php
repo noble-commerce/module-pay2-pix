@@ -61,14 +61,6 @@ class Callback implements HttpPostActionInterface
      */
     protected $logger;
 
-    /**
-     * @param \Magento\Sales\Model\ResourceModel\Order $orderResource
-     * @param \Magento\Sales\Api\OrderRepositoryInterface $orderRepository
-     * @param \Magento\Payment\Gateway\Command\CommandManagerPoolInterface $commandManagerPool
-     * @param \Magento\Framework\Webapi\Rest\Request $request
-     * @param \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory
-     * @param \Psr\Log\LoggerInterface $logger
-     */
     public function __construct(
         OrderResource $orderResource,
         OrderRepositoryInterface $orderRepository,
@@ -94,7 +86,7 @@ class Callback implements HttpPostActionInterface
 
         $result = $this->resultJsonFactory->create();
         $body = $this->request->getBodyParams();
-        $identifier = isset($body['external_identifier']) ? $body['external_identifier'] : '';
+        $identifier = $body['external_identifier'] ?? '';
 
         if (!$identifier) {
             $identifier = $this->request->getParam('external_identifier');
@@ -115,14 +107,10 @@ class Callback implements HttpPostActionInterface
             $commandManager->executeByCode('notification', $payment, $arguments);
         } catch (\Exception $e) {
             $this->logger->critical($e->getMessage());
-            return $result->setData(array(
-                'ok' => false
-            ));
+            return $result->setData(['ok' => false]);
         }
 
-        return $result->setData(array(
-            'ok' => true
-        ));
+        return $result->setData(['ok' => true]);
     }
 
     /**

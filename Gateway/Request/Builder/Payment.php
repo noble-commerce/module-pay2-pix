@@ -38,10 +38,6 @@ class Payment implements BuilderInterface
      */
     protected $config;
 
-    /**
-     * @param \Magento\Store\Model\StoreManagerInterface $storeManager
-     * @param \Pay2\Pix\Gateway\Config\Config $config
-     */
     public function __construct(StoreManagerInterface $storeManager, Config $config)
     {
         $this->storeManager = $storeManager;
@@ -81,7 +77,6 @@ class Payment implements BuilderInterface
     }
 
     /**
-     * @param array $buildSubject
      * @return string
      * @throws LocalizedException
      */

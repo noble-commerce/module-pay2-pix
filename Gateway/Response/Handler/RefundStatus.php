@@ -30,9 +30,6 @@ class RefundStatus implements HandlerInterface
      */
     protected $paymentRepository;
 
-    /**
-     * @param \Magento\Sales\Api\OrderPaymentRepositoryInterface $paymentRepository
-     */
     public function __construct(
         OrderPaymentRepositoryInterface $paymentRepository
     ) {

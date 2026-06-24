@@ -28,7 +28,7 @@ $qrCodeText = $block->getInfo()->getAdditionalInformation('text_content');
 <?= $escaper->escapeHtml($paymentTitle) ?>
 
 <table class="data-table admin__table-secondary">
-    <?php foreach ($specificInfo as $label => $value) : ?>
+    <?php foreach ($specificInfo as $label => $value): ?>
         <tr>
             <th><?= $escaper->escapeHtml($label) ?>:</th>
             <td>
@@ -40,23 +40,23 @@ $qrCodeText = $block->getInfo()->getAdditionalInformation('text_content');
     <tr>
         <th scope="row">Status</th>
         <td>
-            <?php if ($block->isPaymentPaid()) : ?>
+            <?php if ($block->isPaymentPaid()): ?>
                 <?= /* @noEscape */ __('Paid') ?>
-            <?php elseif ($block->isPaymentVoided()) : ?>
+            <?php elseif ($block->isPaymentVoided()): ?>
                 <?= /* @noEscape */ __('Voided') ?>
-            <?php elseif ($block->isPaymentRefunded()) : ?>
+            <?php elseif ($block->isPaymentRefunded()): ?>
                 <?= /* @noEscape */ __('Refunded') ?>
-            <?php elseif ($block->isPaymentExpired()) : ?>
+            <?php elseif ($block->isPaymentExpired()): ?>
                 <?= /* @noEscape */ __('Expired') ?>
-            <?php else : ?>
+            <?php else: ?>
                 <?= /* @noEscape */ __('Waiting') ?>
             <?php endif ?>
         </td>
     </tr>
 
-    <?php if ($block->isPaymentPending()) : ?>
+    <?php if ($block->isPaymentPending()): ?>
         <!--
-        <?php if (!empty($qrCodeImage)) : ?>
+        <?php if (!empty($qrCodeImage)): ?>
         <tr>
             <th scope="row" style="min-width: 120px"><?= /* @noEscape */ __('QR Code') ?></th>
             <td>

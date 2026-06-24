@@ -24,7 +24,7 @@ class Critical extends System
     /**
      * @var string
      */
-    const DEFAULT_DEBUG_FILE_NAME = '/var/log/pay2.log';
+    public const DEFAULT_DEBUG_FILE_NAME = '/var/log/pay2.log';
 
     /**
      * @var string

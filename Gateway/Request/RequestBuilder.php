@@ -26,9 +26,6 @@ class RequestBuilder implements BuilderInterface
      */
     protected $builderComposite;
 
-    /**
-     * @param \Magento\Payment\Gateway\Request\BuilderInterface $builder
-     */
     public function __construct(BuilderInterface $builder)
     {
         $this->builderComposite = $builder;

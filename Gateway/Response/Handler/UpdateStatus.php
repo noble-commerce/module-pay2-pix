@@ -19,9 +19,9 @@ namespace Pay2\Pix\Gateway\Response\Handler;
 
 use Magento\Payment\Gateway\Data\PaymentDataObjectInterface;
 use Magento\Payment\Gateway\Response\HandlerInterface;
-use Magento\Sales\Api\OrderRepositoryInterface;
 use Magento\Sales\Api\InvoiceRepositoryInterface;
 use Magento\Sales\Api\OrderPaymentRepositoryInterface;
+use Magento\Sales\Api\OrderRepositoryInterface;
 use Magento\Sales\Model\Order;
 use Magento\Sales\Model\Order\Invoice;
 use Magento\Sales\Model\Order\Payment;
@@ -50,12 +50,6 @@ class UpdateStatus implements HandlerInterface
      */
     protected $invoiceService;
 
-    /**
-     * @param \Magento\Sales\Api\OrderPaymentRepositoryInterface $paymentRepository
-     * @param \Magento\Sales\Api\OrderRepositoryInterface $orderRepository
-     * @param \Magento\Sales\Api\InvoiceRepositoryInterface $invoiceRepository
-     * @param \Magento\Sales\Model\Service\InvoiceService $invoiceService
-     */
     public function __construct(
         OrderPaymentRepositoryInterface $paymentRepository,
         OrderRepositoryInterface $orderRepository,
@@ -136,7 +130,7 @@ class UpdateStatus implements HandlerInterface
 
         $this->invoiceRepository->save($invoice);
 
-        if( $order->getState() === Order::STATE_NEW ){
+        if ($order->getState() === Order::STATE_NEW) {
             $order->setState(Order::STATE_PROCESSING);
         }
 
